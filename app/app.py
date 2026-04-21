@@ -1,11 +1,10 @@
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-
 @app.route("/")
 def home():
-
-    return jsonify({"message": "¡Cambio desde Jenkins!"})
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    return jsonify({
+        "status": "success",
+        "servidor": "AWS EC2 - Jenkins Node",
+        "developer": "Ricardo Isai",
+        "version": "2.0.5",
+        "mensaje": "Despliegue automático desde la rama mejora-python al 100",
+        "ubicacion": "Puebla, MX"
+    })
