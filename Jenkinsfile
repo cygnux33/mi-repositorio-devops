@@ -1,14 +1,10 @@
 pipeline {
     agent any
 
-    options {
-        skipDefaultCheckout()
-    }
-
     stages {
         stage('Clonar repositorio') {
             steps {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/cygnux33/mi-repositorio-devops.git'
             }
         }
 
